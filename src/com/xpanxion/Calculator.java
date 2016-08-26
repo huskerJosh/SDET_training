@@ -22,50 +22,29 @@ public class Calculator {
 			result.setTextResult("Goodbye " + name);
 			break;
 		case ADDITION:
-			int addend=scanner.nextInt();
-			int augend=scanner.nextInt();
-
-			int sum = addend + augend; 
-			result.setTextResult(addend + " + " + augend + " = " +sum);
+			Addition add = new Addition();
+			result = add.performOperation(scanner);
+			 
 			break;
 		case SUBTRACTION:
-			int minuend=scanner.nextInt();
-			int subtrahend=scanner.nextInt();
 
-			int difference = minuend - subtrahend;
-			result.setTextResult(minuend + " - " + subtrahend + " = " +difference);
+			Subtraction sub = new Subtraction();
+			result = sub.performOperation(scanner);
 			break;
 		case MULTIPLICATION:
-			int multiplier=scanner.nextInt();
-			int multiplicand=scanner.nextInt();
 
-			int product = multiplier * multiplicand; 
-
-			result.setTextResult(multiplier + " * " + multiplicand + " = " +product);
+			Multiplication mult = new Multiplication();
+			result = mult.performOperation(scanner);
 			break;
 		case DIVISION:
-			int dividend=scanner.nextInt();
-			int divisor=scanner.nextInt();
-
-			if(divisor==0){
-				result.setTextResult("I'm sorry, but you cannot divide by zero");
-			}
-			else{
-				int quotient = dividend / divisor; 
-				
-				result.setTextResult("  " + dividend + " / " + divisor + " = " +quotient);
-			}
-
+			
+			Division div = new Division();
+			result = div.performOperation(scanner);
 			break;
 		case FACTORIAL:
-			int value = scanner.nextInt();
-			int total = 1;
-			
-			for(int i = value; i>0; i--){
-				total=total*i;	
-			}
-		
-			System.out.println(value + "! =" + total);
+
+			Factorial fac = new Factorial();
+			result = fac.performOperation(scanner);
 			break;
 		default:
 			result.setTextResult("I'm sorry, that's not a valid choice.");
