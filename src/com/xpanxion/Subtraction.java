@@ -2,7 +2,11 @@ package com.xpanxion;
 
 import java.util.Scanner;
 
-public class Subtraction {
+public class Subtraction extends BinaryOperation{
+	
+	public Subtraction(){
+		super("-");
+	}
 	
 	public Calculation performOperation(Scanner scanner){
 		
@@ -11,11 +15,7 @@ public class Subtraction {
 
 		int difference = minuend - subtrahend;
 		
-		Calculation result = new Calculation();
-		
-		result.setTextResult(minuend + " - " + subtrahend + " = " +difference);
-		
-		return result;
+		return successfulCalc(minuend, subtrahend, difference);
 	}
 
 
