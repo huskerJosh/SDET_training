@@ -1,6 +1,5 @@
 package com.xpanxion;
 
-import java.util.Scanner;
 
 public class Addition extends BinaryOperation{
 	
@@ -8,14 +7,17 @@ public class Addition extends BinaryOperation{
 		super("+");
 	}
 	
-	public Calculation performOperation(Scanner scanner){
+	protected int calculate(int addend, int augend){
 		
-		int addend=scanner.nextInt();
-		int augend=scanner.nextInt();
-
-		int sum = addend + augend; 
-		
-		return successfulCalc(addend, augend, sum);
-
+		return addend + augend;
 	}
+	
+	protected boolean isValid(int addend, int augend){
+		return true; 
+	}
+	
+	protected String errorMessage(){
+		return "";
+	}
+	
 }

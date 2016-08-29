@@ -1,6 +1,5 @@
 package com.xpanxion;
 
-import java.util.Scanner;
 
 public class Subtraction extends BinaryOperation{
 	
@@ -8,15 +7,16 @@ public class Subtraction extends BinaryOperation{
 		super("-");
 	}
 	
-	public Calculation performOperation(Scanner scanner){
-		
-		int minuend=scanner.nextInt();
-		int subtrahend=scanner.nextInt();
-
-		int difference = minuend - subtrahend;
-		
-		return successfulCalc(minuend, subtrahend, difference);
+	protected int calculate(int minuend, int subtrahend){
+		return minuend - subtrahend;
 	}
-
+	
+	protected boolean isValid(int minuend, int subtrahend){
+		return true;
+	}
+	
+	protected String errorMessage(){
+		return "";
+	}
 
 }
